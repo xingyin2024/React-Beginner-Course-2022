@@ -1,4 +1,5 @@
 import "./App.css";
+import {Planets} from './Planets'
 
 function App() {
   const planets = [
@@ -10,11 +11,23 @@ function App() {
     { name: "Uranus", isGasPlanet: true },
   ];
 
+  const isGreen = true;
+
   return (
     <div className="App">
       {planets.map(
         (planet, key) => !planet.isGasPlanet && <h1> {planet.name} </h1>
       )}
+      {<hr />}
+      {planets.map((planet, key) => {
+        return <Planets name={planet.name} />
+      })}
+      {<hr />}
+      {planets.map(
+        (planet, key) => planet.isGasPlanet && <h1> {planet.name} </h1>
+      )}
+      {isGreen && <button>Button</button>}
+      {<br />}
     </div>
   );
 }

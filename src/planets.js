@@ -6,3 +6,12 @@ const planets = [
   { name: "Neptune", isGasPlanet: true },
   { name: "Uranus", isGasPlanet: true },
 ];
+
+
+export const Planets = (props) => {
+  return (
+    <div>
+      {props.name}
+    </div>
+  );
+}
